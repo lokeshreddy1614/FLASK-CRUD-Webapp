@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CRUD Application</title>
+</head>
+<body>
+    <h1>Items List</h1>
+    <a href="{{ url_for('add') }}">Add New Item</a>
+    <ul>
+        {% for item in items %}
+        <li>
+            {{ item.name }} - {{ item.description }}
+            <a href="{{ url_for('update', id=item.id) }}">Update</a>
+            <a href="{{ url_for('delete', id=item.id) }}">Delete</a>
+        </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
+
